@@ -8,7 +8,6 @@ import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 // import { Link, useHistory } from "react-router-dom";
 
-
 const CardList = () => {
     const { store, actions } = useContext(Context);
     console.log(store)
