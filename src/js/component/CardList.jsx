@@ -6,7 +6,7 @@ import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-// import { Link, useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 const CardList = () => {
     const { store, actions } = useContext(Context);
@@ -71,5 +71,4 @@ const CardList = () => {
         </div>
     );
 };
-
 export default CardList;

@@ -5,7 +5,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar navbar-light bg-light m-0 d-flex justify-content-end">
       <div className="ml-auto">
-        <Link to="/AddContact">
+        <Link to="/GetCard">
           <button className="btn btn-success me-2">Add new contact</button>
         </Link>
       </div>
