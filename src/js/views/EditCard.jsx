@@ -12,7 +12,7 @@ export const EditCard = (props) => {
         address: "",
         phone: "",
         email: "",
-        agenda_slug: "JamesWList",
+        agenda_slug: "",
     });
     let myContact =
         store.contactList &&
@@ -79,6 +79,6 @@ export const EditCard = (props) => {
     );
 };
 
-EditContact.propTypes = {
+EditCard.propTypes = {
     match: PropTypes.object
 };

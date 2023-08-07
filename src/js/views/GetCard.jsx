@@ -12,7 +12,7 @@ export const GetCard = () => {
         address: "",
         phone: "",
         email: "",
-        agenda_slug: "JamesWList",
+        agenda_slug: "",
     }
 
     const { store, actions } = useContext(Context);

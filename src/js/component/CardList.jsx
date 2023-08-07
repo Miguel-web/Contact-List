@@ -6,12 +6,13 @@ import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { Link, useHistory } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+
 
 const CardList = () => {
     const { store, actions } = useContext(Context);
     console.log(store)
-    let history = useHistory();
+    let navigate = useNavigate();
 
     function handleDelete(i) {
         console.log("handleDelete contact", i);
@@ -54,7 +55,7 @@ const CardList = () => {
                     </div>
                     <div className="col-md-2 d-flex justify-content-evenly m-3">
                         <button onClick={() => {
-                            history.push(`/AddContact/${contact.id}`)
+                            navigate.push(`/AddContact/${contact.id}`)
                         }}>
                             <FontAwesomeIcon icon={faPen} />
                         </button>
@@ -71,4 +72,5 @@ const CardList = () => {
         </div>
     );
 };
+
 export default CardList;
