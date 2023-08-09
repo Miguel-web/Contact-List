@@ -19,13 +19,10 @@ const getState = ({ getStore, getActions, setStore }) => {
         });
       },
       contact: () => {
-        fetch(
-          "https://assets.breatheco.de/apis/fake/contact/agenda/Miguelweb",
-          {
-            method: "GET",
-            headers: { "content-type": "application/json" },
-          }
-        )
+        fetch("https://playground.4geeks.com/apis/fake/contact/agenda", {
+          method: "GET",
+          headers: { "content-type": "application/json" },
+        })
           .then((response) => response.json())
           .then((data) => setStore({ contactList: data }));
       },
