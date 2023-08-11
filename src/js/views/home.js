@@ -21,7 +21,8 @@ export const Home = () => {
             <div className="contact-containter">
               <img
                 className="contact-image"
-                src="https://www.blackrock.com/blk-corp-assets/cache-1665652128000/images/media-bin/web/global/headshots/headshot-fink-larry-400x400.png"
+                src={perfil}
+                style={{ maxWidth: "200px" }}
               />
               <div className="info-container">
                 <p className="name-text">{contact.full_name}</p>
