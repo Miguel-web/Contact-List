@@ -8,7 +8,9 @@ const getState = ({ getStore, getActions, setStore }) => {
       getContacts: async function () {
         let store = getStore();
         try {
-          const response = await fetch(`${store.baseURL}/agenda/LuisMarin-dev`);
+          const response = await fetch(
+            `${store.baseURL}/agenda/my_super_agenda`
+          );
           // waits until the request completes...
           console.log(response);
           if (response.ok) {

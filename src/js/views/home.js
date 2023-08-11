@@ -37,12 +37,14 @@ export const Home = () => {
                   }}
                 >
                   <i
-                    className={`fa-regular fa-2x ${faTrashCan} contact-button`}
+                    className={`fa-regular fa-2x fa-trash-can contact-button`}
                   ></i>
                 </span>
                 <Link to={`/newcontact/${contact.id}`}>
                   <span>
-                    <i className={`fa-regular fa-2x ${faPen} contact-button`} />
+                    <i
+                      className={`fa-regular fa-2x fa-pen-to-square contact-button`}
+                    />
                   </span>
                 </Link>
               </div>
