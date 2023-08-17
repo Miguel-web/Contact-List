@@ -17,18 +17,11 @@ export const Home = () => {
               <img
                 className="contact-image"
                 src={perfil}
-                style={{ maxWidth: "200px" }}
+                style={{ maxWidth: "300px" }}
               />
-              <div className="card-body">
-                <p className="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-              </div>
               <ul className="list-group list-group-flush">
                 <li className="list-group-item">
-                  <strong>Name: </strong>
-                  {contact.full_name}
+                  <h3>{contact.full_name}</h3>
                 </li>
                 <li className="list-group-item">
                   <strong>Phone: </strong>
