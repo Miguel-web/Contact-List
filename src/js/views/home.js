@@ -20,7 +20,7 @@ export const Home = () => {
                 style={{ maxWidth: "300px" }}
               />
               <ul className="list-group list-group-flush">
-                <li className="list-group-item">
+                <li className="list-group-item text-center">
                   <h3>{contact.full_name}</h3>
                 </li>
                 <li className="list-group-item">
