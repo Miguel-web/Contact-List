@@ -3,6 +3,7 @@ import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 import perfil from "../../img/perfil.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export const Home = () => {
   const { store, actions } = useContext(Context);
@@ -47,8 +48,15 @@ export const Home = () => {
                       actions.removeContacts(contact.id);
                     }}
                   >
-                    <i className="fas fa-trash"></i>
+                    <Link>
+                      <i className="fas fa-trash"></i>
+                    </Link>
                   </span>
+                  <Link to={`/newcontact/${contact.id}`}>
+                    <span>
+                      <i className="fas fa-trash ms-2"></i>
+                    </span>
+                  </Link>
                 </li>
               </ul>
               {/* <div className="contact-containter">
