@@ -2,12 +2,6 @@ import React, { useContext } from "react";
 import "../../styles/home.css";
 import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import perfil from "../../img/perfil.png";
 
 export const Home = () => {
@@ -36,9 +30,7 @@ export const Home = () => {
                     actions.removeContacts(contact.id);
                   }}
                 >
-                  <i
-                    className={`fa-regular fa-2x fa-trash-can contact-button`}
-                  ></i>
+                  <i className="fas fa-trash"></i>
                 </span>
                 <Link to={`/newcontact/${contact.id}`}>
                   <span>

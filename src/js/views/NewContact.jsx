@@ -1,20 +1,12 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPen } from "@fortawesome/free-solid-svg-icons";
-import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { faPhoneFlip } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import perfil from "../../img/perfil.png";
-
 import React, { useState, useEffect, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 import "../../styles/demo.css";
 
 const initialValues = {
     full_name: "",
     email: "",
-    agenda_slug: "LuisMarin-dev",
+    agenda_slug: "miguelweb",
     address: "",
     phone: ""
 }
@@ -22,38 +14,40 @@ const initialValues = {
 const NewContact = () => {
     const { store, actions } = useContext(Context);
     const [contact, setContact] = useState(initialValues);
+    const navigate = useNavigate()
     const { id } = useParams();
     console.log(id);
     const handleContact = (event) => {
         setContact({ ...contact, [event.target.name]: event.target.value })
     };
-    const addNewContact = (event) => {
+    const addNewContact = async (event) => {
         event.preventDefault();
         if (id == undefined) {
-            actions.addContacts(contact);
-
+            const response = await actions.addContacts(contact);
+            if (response) navigate("/")
         } else {
-            actions.updateContacts(contact, id)
+            const response = await actions.updateContacts(contact, id)
+            if (response) navigate("/")
         }
     }
 
     return (
         <div className="container w-100">
-            <form clasName="d-flex justify-content-center" onSubmit={addNewContact}>
+            <form className="d-flex flex-column justify-content-center align-items-center" onSubmit={addNewContact}>
                 <div className="mb-3 col-6">
-                    <label for="InputFullName" className="form-label">Full Name</label>
+                    <label htmlFor="InputFullName" className="form-label">Full Name</label>
                     <input type="text" className="form-control" id="InputFullName" name="full_name" value={contact.full_name} onChange={(event) => handleContact(event)} />
                 </div>
                 <div className="mb-3 col-6">
-                    <label for="InputEmail" className="form-label">Email address</label>
+                    <label htmlFor="InputEmail" className="form-label">Email address</label>
                     <input type="email" className="form-control" id="InputEmail" aria-describedby="emailHelp" name="email" value={contact.email} onChange={(event) => handleContact(event)} />
                 </div>
                 <div className="mb-3 col-6">
-                    <label for="PhoneNumber" className="form-label">Phone Number</label>
+                    <label htmlFor="PhoneNumber" className="form-label">Phone Number</label>
                     <input type="text" className="form-control" id="PhoneNumber" name="phone" value={contact.phone} onChange={(event) => handleContact(event)} />
                 </div>
                 <div className="mb-3 col-6">
-                    <label for="InputAddress" className="form-label">Address</label>
+                    <label htmlFor="InputAddress" className="form-label">Address</label>
                     <input type="text" className="form-control" id="InputAddress" name="address" value={contact.address} onChange={(event) => handleContact(event)} />
                 </div>
                 <button type="submit" className="btn btn-primary col-6">Save</button>

@@ -8,9 +8,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       getContacts: async function () {
         let store = getStore();
         try {
-          const response = await fetch(
-            `${store.baseURL}/agenda/my_super_agenda`
-          );
+          const response = await fetch(`${store.baseURL}/agenda/miguelweb`);
           // waits until the request completes...
           console.log(response);
           if (response.ok) {
@@ -25,7 +23,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       addContacts: async function (data) {
         let store = getStore();
         try {
-          const response = await fetch(`${store.baseURL}/`, {
+          const response = await fetch(`${store.baseURL}`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -34,6 +32,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
           if (response.ok) {
             getActions().getContacts();
+            return true;
+          } else {
+            return false;
           }
         } catch (error) {
           console.log(error);
@@ -42,7 +43,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       removeContacts: async function (id) {
         let store = getStore();
         try {
-          const response = await fetch(`${store.baseURL}/${id}`, {
+          const response = await fetch(`${store.baseURL}${id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -58,7 +59,7 @@ const getState = ({ getStore, getActions, setStore }) => {
       updateContacts: async function (data, id) {
         let store = getStore();
         try {
-          const response = await fetch(`${store.baseURL}/${id}`, {
+          const response = await fetch(`${store.baseURL}${id}`, {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",
@@ -67,6 +68,9 @@ const getState = ({ getStore, getActions, setStore }) => {
           });
           if (response.ok) {
             getActions().getContacts();
+            return true;
+          } else {
+            return false;
           }
         } catch (error) {
           console.log(error);
