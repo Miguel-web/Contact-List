@@ -78,6 +78,7 @@ export const Home = () => {
                 </Link>
               </div>*/}
             </div>
+            <br />
           </div>
         );
       })}
