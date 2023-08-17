@@ -52,11 +52,11 @@ export const Home = () => {
                       <i className="fas fa-trash"></i>
                     </Link>
                   </span>
-                  <Link to={`/newcontact/${contact.id}`}>
-                    <span>
-                      <i className="fas fa-trash ms-2"></i>
-                    </span>
-                  </Link>
+                  <span>
+                    <Link to={`/newcontact/${contact.id}`}>
+                      <i className="fa-solid fa-pencil ms-2"></i>
+                    </Link>
+                  </span>
                 </li>
               </ul>
               {/* <div className="contact-containter">
