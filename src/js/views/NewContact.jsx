@@ -52,7 +52,7 @@ const NewContact = () => {
                 </div>
                 <button type="submit" className="btn btn-primary col-6">Save</button>
             </form>
-            <Link to="/">or get back to contacts</Link>
+            <Link to="/">back to contacts</Link>
         </div>
     );
 };
